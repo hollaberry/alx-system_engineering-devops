@@ -2,8 +2,8 @@
 # displays Best School 10 times
 
 n=0
-while [ $n -le 10)
+while [ $n -ne 10 ]
 do
-    echo "Best School"
-    n=$(( n+1 ))
+  echo "Best School"
+  n=$(( n+1 ))
 done
