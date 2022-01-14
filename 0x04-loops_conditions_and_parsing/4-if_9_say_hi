@@ -4,7 +4,7 @@
 C=1
 while [ $C -ne 11 ]
 do
-  if [ $C = 9 ]
+  if [ $C -eq 9 ]
   then
       echo "HI"
   else
