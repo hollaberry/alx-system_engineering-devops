@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Displays Best School 10 times
 
-C=0
-while [ $C -lt 11 ]
+C=1
+while [ $C -ne 11 ]
 do
-    if [ $C = 9 ]
-    then
-	echo "HI"
-    else
-	echo "Best School"
-    fi
-    let C+=1
+  if [ $C = 9 ]
+  then
+      echo "HI"
+  else
+      echo "Best School"
+  fi
+  C=$(( C + 1 ))
 done
