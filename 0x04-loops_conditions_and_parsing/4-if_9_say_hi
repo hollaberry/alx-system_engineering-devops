@@ -6,7 +6,7 @@ while [ $C -ne 11 ]
 do
   if [ $C -eq 9 ]
   then
-      echo "HI"
+      echo "Hi"
   else
       echo "Best School"
   fi
