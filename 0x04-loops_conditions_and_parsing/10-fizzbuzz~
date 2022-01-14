@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# displays numbers from 1 to 100
+
+$COUNT=1
+while [ $COUNT -lt 101 ]
