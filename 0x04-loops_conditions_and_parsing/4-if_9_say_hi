@@ -4,11 +4,10 @@
 C=1
 while [ $C -ne 11 ]
 do
+    echo "Best School"
   if [ $C -eq 9 ]
   then
       echo "Hi"
-  else
-      echo "Best School"
   fi
   C=$(( C + 1 ))
 done
