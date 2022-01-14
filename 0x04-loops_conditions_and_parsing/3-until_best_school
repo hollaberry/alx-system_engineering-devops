@@ -5,5 +5,5 @@ C=0
 until [ $C -eq 10 ]
 do
     echo "Best School"
-    C+=1
+    C=$(( C + 1 ))
 done
