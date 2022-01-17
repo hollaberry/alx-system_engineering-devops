@@ -2,30 +2,13 @@
 # displays numbers fro 1 to 20.
 
 C=1
-while [ $C -lt 21 ]
+while [ $C -le 21 ]
 do
-    case $C in
-
-          4)
-	      echo $C
-	      echo "bad luck from China"
-	      ;;
-
-          9)
-	      echo $C
-	      echo "bad luck from Japan"
-	      ;;
-
-          17)
-	      echo $C
-	      echo "bad luck from Italy"
-	      ;;
-
-          *)
-	      echo $C
-	      ;;
-
-    esac
-
-    let C+=1
+echo "$C"
+case $C in
+    4) echo "bad luck from China";;
+    9) echo "bad luck from Japan";;
+    17) echo "bad luck from Italy";;
+esac
+    C=$(( C + 1 ))
 done
