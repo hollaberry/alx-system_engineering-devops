@@ -5,13 +5,13 @@ C=0
 while [ $C != 10 ]
 do
   if [ $C = 3 ]
-    then
-      echo "bad luck"
-    elif [ $C = 7 ]
-    then
-	echo "good luck"
-    else
-	echo "Best School"
-    fi
-    C=$(( C + 1 ))
+  then
+    echo "bad luck"
+  elif [ $C = 7 ]
+  then
+    echo "good luck"
+  else
+    echo "Best School"
+  fi
+  C=$(( C + 1 ))
 done
