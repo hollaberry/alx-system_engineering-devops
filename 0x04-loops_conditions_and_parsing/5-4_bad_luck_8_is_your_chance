@@ -4,10 +4,10 @@
 C=0
 while [ $C != 10 ]
 do
-  if [ $C = 4 ]
+  if [ $C = 3 ]
     then
       echo "bad luck"
-    elif [ $C = 8 ]
+    elif [ $C = 7 ]
     then
 	echo "good luck"
     else
