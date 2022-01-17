@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 # displays a story with each line of /etc/passwd.
 
 input="/etc/passwd"
