@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # Displays Best School 10 times
 
-C=1
-while [ $C -lt 11 ]
+C=0
+while [ $C != 10 ]
 do
-    if [ $C = 4 ]
+  if [ $C = 4 ]
     then
-	echo "bad luck"
+      echo "bad luck"
     elif [ $C = 8 ]
     then
 	echo "good luck"
     else
 	echo "Best School"
     fi
-    let C+=1
+    C=$(( C + 1 ))
 done
