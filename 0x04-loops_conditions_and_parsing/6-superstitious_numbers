@@ -2,9 +2,9 @@
 # displays numbers fro 1 to 20.
 
 C=1
-while [ $C -le 21 ]
+while [ $C -le 20 ]
 do
-echo "$C"
+echo "$C";
 case $C in
     4) echo "bad luck from China";;
     9) echo "bad luck from Japan";;
