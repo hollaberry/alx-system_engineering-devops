@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# displays the process with name bash
+# shellcheck disable=SC2009
+
+ps -faux | grep "bash"
