@@ -1,0 +1,1 @@
+Learning about puppet and its lint
