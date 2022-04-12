@@ -41,8 +41,8 @@ listen webnikex
         bind :80
         mode http
         balance roundrobin
-        server 1745-web-01 35.243.128.143:80 check
-        server 652-web-02 44.200.28.146:80 check
+        server 1745-web-01 34.138.144.135:80 check
+        server 1745-web-02 35.231.255.250:80 check
 
 frontend www-http
         bind :80
@@ -56,5 +56,5 @@ frontend www-https
 
 backend web-backend
         redirect scheme https if !{ ssl_fc }
-        server 1745-web-01 35.243.128.143:80 check
-        server 1745-web-02 44.200.28.146:80 check
+        server 1745-web-01 34.138.144.135:80 check
+        server 1745-web-02 35.231.255.250:80 check
