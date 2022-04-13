@@ -8,9 +8,9 @@ import requests
 
 if __name__ == '__main__':
     USERS = []
-    userss = requests.get("https://jsonplaceholder.typicode.com/users")
-    for i in userss.json():
-        USERS.append((u.get('id'), u.get('username')))
+    users_api = requests.get("https://jsonplaceholder.typicode.com/users")
+    for i in users_api.json():
+        USERS.append((i.get('id'), i.get('username')))
     TASK_STATUS_TITLE = []
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
     for t in todos.json():
