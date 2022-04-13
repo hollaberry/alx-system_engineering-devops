@@ -12,6 +12,7 @@ if __name__ == '__main__':
                         format(userId), verify=False).json()
     todo = requests.get(endpoint + "todos?userId={}".
                         format(userId), verify=False).json()
+    completed_tasks = []
     for task in todo:
         if task.get('completed') is True:
             completed_tasks.append(task.get('title'))
