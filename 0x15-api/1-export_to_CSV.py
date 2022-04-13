@@ -1,19 +1,35 @@
 #!/usr/bin/python3
-""" Script that get info using REST API """
+"""getting data from an api and export in CSV
+"""
 
+import csv
 import requests
 from sys import argv
 
 if __name__ == '__main__':
-    endpoint = "https://https://jsonplaceholder.typicode.com/"
-    userId = argv[1]
-    user = requests.get(endpoint + "users/{}".
-                         format(userId), verify=False).json()
-    todo = requests.get(endpoint + "todos?userId={}".
-                         format(userId), verify=False).json()
-    with open("{}.csv".format(userId), 'w', newline='') as my_file:
-        my_writer = csv.writer(my_file, quoting=csv.QUOTE_ALL)
-        for task in todo:
-            my_writer.writerow([int(userId), user.get('username'),
-                                task.get('completed'),
-                                task.get('title')])
+    api_url = "https://jsonplaceholder.typicode.com/users"
+    users = requests.get(api_url)
+    for i in users.json():
+        if i.get("id") == int(argv[1]):
+            USERNAME = i.get("username")
+            break
+    TASK_STATUS_TITLE = []
+
+    todos_url = "https://jsonplaceholder.typicode.com/todos"
+    todos = requests.get(todos_url)
+
+    for t in todos.json():
+        if t.get("userId") == int(argv[1]):
+            TASK_STATUS_TITLE.append((t.get('completed'), t.get('title')))
+
+    """export to csv"""
+    filename = "{}.csv".format(argv[1])
+    with open(filename, "w") as new_file:
+        fieldnames = ["USER_ID", "USERNAME",
+                      "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames,
+                                quoting=csv.QUOTE_ALL)
+        for task in TASK_STATUS_TITLE:
+            writer.writerow({"USER_ID": argv[1], "USERNAME": USERNAME,
+                             "TASK_COMPLETED_STATUS": task[0],
+                             "TASK_TITLE": task[1]})
