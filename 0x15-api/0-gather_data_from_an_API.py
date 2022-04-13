@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-""" Script that get info using REST API """
+"""getting data from an api
+"""
 
 import requests
 from sys import argv
 
 if __name__ == '__main__':
-    endpoint = "https://https://jsonplaceholder.typicode.com/"
+    endpoint = "https://jsonplaceholder.typicode.com"
     userId = argv[1]
     user = requests.get(endpoint + "users/{}".
-                         format(userId), verify=False).json()
     todo = requests.get(endpoint + "todos?userId={}".
-                         format(userId), verify=False).json()
-    completed_tasks = []
+                        format(userId), verify=False).json()
     for task in todo:
         if task.get('completed') is True:
             completed_tasks.append(task.get('title'))
