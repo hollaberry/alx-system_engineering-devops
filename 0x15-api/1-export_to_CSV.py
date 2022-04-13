@@ -15,7 +15,7 @@ if __name__ == '__main__':
             break
     TASK_STATUS_TITLE = []
 
-    todos_url = "https://jsonplaceholder.typicode.com/todos"
+    todos_url = "http://jsonplaceholder.typicode.com/todos"
     todos = requests.get(todos_url)
 
     for t in todos.json():
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     with open(filename, "w") as new_file:
         fieldnames = ["USER_ID", "USERNAME",
                       "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames,
+        writer = csv.DictWriter(new_file, fieldnames=fieldnames,
                                 quoting=csv.QUOTE_ALL)
         for task in TASK_STATUS_TITLE:
             writer.writerow({"USER_ID": argv[1], "USERNAME": USERNAME,
